@@ -1,18 +1,19 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
+      version = "~> 4.18.0"
     }
   }
-}
 
- backend "s3" {
+  backend "s3" {
     bucket         	   = "terraform-github-actions-state-897"
-    #key                = "state/terraform.tfstate"
-    #region         	   = "eu-central-1"
+    #key               = "state/terraform.tfstate"
+    region         	   = "us-east-1"
     encrypt        	   = true
     #dynamodb_table = "mycomponents_tf_lockid"
   }
+}
 
 provider "aws" {
   region = "us-east-1"
