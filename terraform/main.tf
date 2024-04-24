@@ -5,7 +5,7 @@ provider "aws" {
 terraform {
  backend "s3" {
 	bucket     	= "terraform-state-logicmonitor"
-	key        	= "./terraform.tfstate"
+	key        	= "terraform.tfstate"
 	region     	= "us-east-1"
 	encrypt    	= true
 	dynamodb_table = "mycomponents_tf_lockid"
