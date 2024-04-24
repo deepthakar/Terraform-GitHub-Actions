@@ -8,7 +8,7 @@ terraform {
 
 terraform {
   backend "s3" {
-    bucket                  = "terraform-s3-state-0223"
+    bucket                  = "terraform_github_actions_state_897"
     #key                     = "my-terraform-project"
     region                  = "us-east-1"
     #shared_credentials_file = "~/.aws/credentials"
