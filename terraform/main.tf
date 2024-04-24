@@ -6,14 +6,13 @@ terraform {
   }
 }
 
-terraform {
-  backend "s3" {
-    bucket                  = "terraform_github_actions_state_897"
-    #key                     = "my-terraform-project"
-    region                  = "us-east-1"
-    #shared_credentials_file = "~/.aws/credentials"
+ backend "s3" {
+    bucket         	   = "terraform-github-actions-state-897"
+    #key                = "state/terraform.tfstate"
+    #region         	   = "eu-central-1"
+    encrypt        	   = true
+    #dynamodb_table = "mycomponents_tf_lockid"
   }
-}
 
 provider "aws" {
   region = "us-east-1"
