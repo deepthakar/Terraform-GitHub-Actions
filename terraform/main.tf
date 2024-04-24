@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket         	   = "terraform-state-logicmonitor"
-    key                = "s3://terraform-state-logicmonitor/state/terraform.tfstate"
+    key                = "state/terraform.tfstate"
     region         	   = "us-east-1"
     encrypt        	   = true
     dynamodb_table     = "mycomponents_tf_lockid"
