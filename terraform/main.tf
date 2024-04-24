@@ -8,10 +8,10 @@ terraform {
 
   backend "s3" {
     bucket         	   = "terraform-github-actions-state-897"
-    key               = "state/terraform.tfstate"
+    key                = "s3://terraform-github-actions-state-897/state/terraform.tfstate"
     region         	   = "us-east-1"
     encrypt        	   = true
-    dynamodb_table = "mycomponents_tf_lockid"
+    dynamodb_table     = "mycomponents_tf_lockid"
   }
 }
 
