@@ -8,7 +8,7 @@ terraform {
   backend "s3" {
     bucket = "terraform-state-logicmonitor"
     region = "us-east-1"
-    key    = "terraform.tfstate"
+    key    = "s3://terraform-state-logicmonitor/terraform.tfstate"
   }
 }
 
