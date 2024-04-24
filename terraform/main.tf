@@ -1,25 +1,20 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-  }
-
-  backend "s3" {
-    bucket = "terraform-state-logicmonitor"
-    region = "us-east-1"
-    key    = "s3://terraform-state-logicmonitor/terraform.tfstate"
-  }
-}
-
+# main.tf
 provider "aws" {
   region = "us-east-1"
 }
-
-resource "aws_instance" "test_instance" {
-  ami           = "ami-0f496107db66676ff"
-  instance_type = "t2.nano"
+terraform {
+ backend "s3" {
+	bucket     	= "terraform-state-logicmonitor"
+	key        	= "terraform.tfstate"
+	region     	= "us-east-1"
+	encrypt    	= true
+	dynamodb_table = "mycomponents_tf_lockid"
+  }
+}
+resource "aws_instance" "demo" {
+  ami       	 = "ami-0f496107db66676ff"
+  instance_type = "t2.micro"
   tags = {
-    Name = "test_instance1"
+	Name = "DemoEC2Instance"
   }
 }
